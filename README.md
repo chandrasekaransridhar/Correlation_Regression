@@ -1,29 +1,96 @@
-# Correlation and regression for data analysis
-# Aim : 
 
-To analyse given data using coeffificient of correlation and regression line
-![image](https://user-images.githubusercontent.com/104613195/168224136-d6b64e64-7d3d-4775-9337-c8f96fe41f2d.png)
+# Experiment-3-Correlation-and-Regression-for-Data-Analysis
+
+# Aim: 
+	To analyse given data using co-efficient of correlation and regression line 
+  
+  <img width="1180" height="120" alt="image" src="https://github.com/user-attachments/assets/62ba8618-34f6-4718-9233-b36f6ca975ff" />
+  
+# Software Required: Python 
+
+# Theory
+1. Correlation measures the strength and direction of the relationship between two variables (say, X and Y).
+  
+2. If one variable changes, correlation tells us how the other variable changes on average.
+   
+3. The correlation coefficient (r) ranges from –1 to +1: +1 means perfect positive correlation, –1 means perfect negative correlation, and 0 means no correlation.
+   
+4. Regression shows how one variable (Y) depends on another variable (X). It provides a line (equation) that best fits the data.
+   
+5. The regression line of Y on X is expressed as:  Y = a + bX,  where a is the intercept and b is the regression coefficient (slope).
+   
+# Algorithm 
+
+<img width="1143" height="477" alt="image" src="https://github.com/user-attachments/assets/d3d41b8d-bee6-4b5f-a6fe-ef6997126cf2" />
+
+# Program
+**_Name : SRIDHAR C<br>
+ Reg No : 212225040425 <br>
+ Slot Name : T1-I5<br>
+ [colab link](https://colab.research.google.com/notebooks/intro.ipynb#scrollTo=VFUkzd183Wif&line=39&uniqifier=1)_**  
+
+```py
+import numpy as np
+import math
+import matplotlib.pyplot as plt
 
 
-# Software required :  
+x=[int(i) for i in input("Enter x values with space seperated:").split()]
+y=[int(i) for i in input("Enter y values with space seperated:").split()]
 
-Python
+if len(x) != len(y):
+  raise SystemExit("Length of x and y should be same")
 
-# Theory:
+N=len(x)
 
-Correlation describes the strength of an association between two variables, and is completely symmetrical, the correlation between A and B is the same as the correlation between B and A. However, if the two variables are related it means that when one changes by a certain amount the other changes on an average by a certain amount.  
+Sum_x=0
+Sum_y=0
+Sum_xy=0
+Sum_x2=0
+Sum_y2=0
 
-If y represents the dependent variable and x the independent variable, this relationship is described as the regression of y on x. The relationship can be represented by a simple equation called the regression equation. The regression equation representing how much y changes with any given change of x can be used to construct a regression line on a scatter diagram, and in the simplest case this is assumed to be a straight line.
+for i in range(N):
+  Sum_x+=x[i]
+  Sum_y+=y[i]
+  Sum_xy+=x[i]*y[i]
+  Sum_x2+=x[i]*x[i]
+  Sum_y2+=y[i]*y[i]
 
-# Procedure :
+den=math.sqrt((N*Sum_x2-Sum_x**2)*(N*Sum_y2-Sum_y**2))
+if den==0:
+  raise SystemExit("Denominator is zero")
 
-![image](https://user-images.githubusercontent.com/104613195/168225866-ac8f6610-bdc3-4ac2-a24e-2b24ba08e189.png)
+r=(N*Sum_xy-Sum_x*Sum_y)/den
+print(f"The correlation coefficient is {r:.3f}")
 
-# Program :
+m=(N*Sum_xy-Sum_x*Sum_y)/(N*Sum_x2-Sum_x**2)
 
-![image](https://github.com/ramjan1729/Correlation_Regression/assets/103921593/9eb48cbf-8ca3-4cd9-8440-ff45fd98333e)
+xmean=Sum_x/N
+ymean=Sum_y/N
+
+c=ymean-m*xmean
+
+print(f"The equation of line is y={m:.3f}x+{c:.3f}")
+
+plt.scatter(x,y)
+
+def Reg(xv):
+  return ymean+m*(xv-xmean)
+
+x_plot=np.linspace(min(x),max(x),51)
+y_plot=Reg(x_plot)
+
+plt.plot(x_plot,y_plot,'r')
+
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend(['Regression Line','Data points'])
+plt.grid()
+plt.show()
+```
+# Output
+<img width="711" height="628" alt="image" src="https://github.com/user-attachments/assets/862a75c4-93f8-491e-a699-6d8f58b30da1" />
 
 
 # Result
-
-# Output 
+  The correlation and regression for data analysis of objects from feeder using probability distribution are calculated.
