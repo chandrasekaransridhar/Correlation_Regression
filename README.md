@@ -1,29 +1,26 @@
 
-# Experiment-3-Correlation-and-Regression-for-Data-Analysis
+# Correlation and regression for data analysis
+# Aim : 
 
-# Aim: 
-	To analyse given data using co-efficient of correlation and regression line 
-  
-  <img width="1180" height="120" alt="image" src="https://github.com/user-attachments/assets/62ba8618-34f6-4718-9233-b36f6ca975ff" />
-  
-# Software Required: Python 
+To analyse given data using coeffificient of correlation and regression line
+![image](https://user-images.githubusercontent.com/104613195/168224136-d6b64e64-7d3d-4775-9337-c8f96fe41f2d.png)
 
-# Theory
-1. Correlation measures the strength and direction of the relationship between two variables (say, X and Y).
-  
-2. If one variable changes, correlation tells us how the other variable changes on average.
-   
-3. The correlation coefficient (r) ranges from –1 to +1: +1 means perfect positive correlation, –1 means perfect negative correlation, and 0 means no correlation.
-   
-4. Regression shows how one variable (Y) depends on another variable (X). It provides a line (equation) that best fits the data.
-   
-5. The regression line of Y on X is expressed as:  Y = a + bX,  where a is the intercept and b is the regression coefficient (slope).
-   
-# Algorithm 
 
-<img width="1143" height="477" alt="image" src="https://github.com/user-attachments/assets/d3d41b8d-bee6-4b5f-a6fe-ef6997126cf2" />
+# Software required :  
 
-# Program
+Python
+
+# Theory:
+
+Correlation describes the strength of an association between two variables, and is completely symmetrical, the correlation between A and B is the same as the correlation between B and A. However, if the two variables are related it means that when one changes by a certain amount the other changes on an average by a certain amount.  
+
+If y represents the dependent variable and x the independent variable, this relationship is described as the regression of y on x. The relationship can be represented by a simple equation called the regression equation. The regression equation representing how much y changes with any given change of x can be used to construct a regression line on a scatter diagram, and in the simplest case this is assumed to be a straight line.
+
+# Procedure :
+
+![image](https://user-images.githubusercontent.com/104613195/168225866-ac8f6610-bdc3-4ac2-a24e-2b24ba08e189.png)
+
+# Program :
 **_Name : SRIDHAR C<br>
  Reg No : 212225040425 <br>
  Slot Name : T1-I5<br>
